@@ -7,3 +7,17 @@
     background-color: aqua;
     border: 2px solid black;
 }
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: antiquewhite;
+}
+
+.text-input {
+    margin-bottom: 25px;
+}
