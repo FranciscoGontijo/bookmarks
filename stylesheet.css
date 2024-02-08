@@ -1,0 +1,9 @@
+#body-class {
+    background-color: lime;
+}
+
+.bookmark {
+    padding: 25px;
+    background-color: aqua;
+    border: 2px solid black;
+}
