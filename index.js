@@ -96,13 +96,16 @@ const createBookmark = () => {
 
     // Create link
     const link = document.createElement('a');
+    link.className = 'site-link';
     link.href = urlInput.value;
 
     // Create bookmark container
     const bookmarkContainer = document.createElement('div');
+    bookmarkContainer.className = 'bookmark';
 
     // Create bookmark title
-    const bookmarkTitle = document.createElement('h2');
+    const bookmarkTitle = document.createElement('h3');
+    bookmarkTitle.className = 'bookmark-title';
     bookmarkTitle.innerHTML = titleInput.value;
 
     // Append title to link
