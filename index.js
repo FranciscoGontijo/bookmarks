@@ -130,12 +130,87 @@ const createBookmark = () => {
 
     const deleteBookmark = () => {
         body.removeChild(bookmarkContainer);
+        saveBookmarks();
     }
 
     deleteBookmarkButton.addEventListener('click', deleteBookmark);
+
+    // Save bookmark array to local storage
+    saveBookmarks();
 }
 
 submitButton.addEventListener('click', createBookmark);
 
+// Use local storage to save and retrieve the bookmarks
 
+const saveBookmarks = () => {
+    const bookmarksArray = Array.from(document.querySelectorAll('.bookmark')).map(bookmarkElement => ({
+        title: bookmarkElement.querySelector('.bookmark-title').innerHTML,
+        url: bookmarkElement.querySelector('.site-link').href,
+    }));
+
+    localStorage.setItem('bookmarks', JSON.stringify(bookmarksArray));
+};
+
+const loadBookmarks = () => {
+    const bookmarksArray = JSON.parse(localStorage.getItem('bookmarks')) || [];
+
+    bookmarksArray.forEach(bookmarkElement => createBookmarkElement(bookmarkElement.title, bookmarkElement.url));
+}
+
+const createBookmarkElement = (title, url) => {
+    // Create delete bookmark button
+    const deleteBookmarkButton = document.createElement('button');
+    deleteBookmarkButton.className = 'close-button';
+
+    // Create close bookmark icon
+    const closeBookmarkIcon = document.createElement('i');
+    closeBookmarkIcon.className = 'close-icon';
+    closeBookmarkIcon.setAttribute('data-feather', 'x');
+
+    // Append close icon to delete button
+    deleteBookmarkButton.appendChild(closeBookmarkIcon);
+
+    // Create link
+    const link = document.createElement('a');
+    link.className = 'site-link';
+    link.href = url;
+
+    // Create bookmark container
+    const bookmarkContainer = document.createElement('div');
+    bookmarkContainer.className = 'bookmark';
+
+    // Create bookmark title
+    const bookmarkTitle = document.createElement('h3');
+    bookmarkTitle.className = 'bookmark-title';
+    bookmarkTitle.innerHTML = title;
+
+    // Append title to link
+    link.appendChild(bookmarkTitle);
+
+    // Append delete button and link to bookmark container
+    bookmarkContainer.appendChild(deleteBookmarkButton);
+    bookmarkContainer.appendChild(link);
+
+    // Append bookmark container to body
+    body.appendChild(bookmarkContainer);
+
+    // Replace feather icons
+    feather.replace();
+
+    const deleteBookmark = () => {
+        body.removeChild(bookmarkContainer);
+    }
+
+    deleteBookmarkButton.addEventListener('click', deleteBookmark);
+
+    // Save bookmark array
+    saveBookmarks();
+}
+
+// Load bookmarks on page load
+loadBookmarks();
+
+// Add function to save bookmarks when the page is unloaded or refreshed
+window.addEventListener('beforeunload', saveBookmarks);
 
