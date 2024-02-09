@@ -1,7 +1,9 @@
 #body-class {
-    background-color: lime;
     padding-top: 50px;
     display: flex;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/032/260/439/non_2x/a-leaf-is-sitting-on-the-water-with-a-bug-on-it-ai-generated-free-photo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .open-form-button {
@@ -71,6 +73,9 @@
 
 .bookmark-title {
     margin: 0;
+    color: black;
+    font-family: sans-serif;
+    font-weight: 300;
 }
 
 .site-link {

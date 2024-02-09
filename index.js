@@ -97,6 +97,7 @@ const createBookmark = () => {
     // Create link
     const link = document.createElement('a');
     link.className = 'site-link';
+    link.target = '_blank';
     link.href = urlInput.value;
 
     // Create bookmark container
