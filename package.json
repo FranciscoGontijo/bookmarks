@@ -1,0 +1,22 @@
+{
+  "name": "bookmarks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FranciscoGontijo/bookmarks.git"
+  },
+  "author": "Francisco Gontijo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FranciscoGontijo/bookmarks/issues"
+  },
+  "homepage": "https://github.com/FranciscoGontijo/bookmarks#readme",
+  "dependencies": {
+    "feather-icons": "^4.29.1"
+  }
+}
