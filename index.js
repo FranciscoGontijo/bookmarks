@@ -124,8 +124,15 @@ const createBookmark = () => {
     // Clear form inputs
     titleInput.value = '';
     urlInput.value = '';
+
+    const deleteBookmark = () => {
+        body.removeChild(bookmarkContainer);
+    }
+
+    deleteBookmarkButton.addEventListener('click', deleteBookmark);
 }
 
 submitButton.addEventListener('click', createBookmark);
+
 
 
