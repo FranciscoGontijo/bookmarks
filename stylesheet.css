@@ -16,6 +16,28 @@
     border: 1px solid black;
     border-radius: 15px;
     background-color: antiquewhite;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    margin-left: -125px; 
+}
+
+.form-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.close-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    
+}
+
+.close-icon {
+    margin: 0;
 }
 
 .text-input {
